@@ -1,4 +1,4 @@
-NAME = Brain
+NAME = AbstractClass
 
 SRCS = main.cpp Animal.cpp Brain.cpp Cat.cpp Dog.cpp
 
