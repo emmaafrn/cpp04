@@ -2,14 +2,16 @@
 
 Cat::Cat(){
 	type = "Cat";
+	_brain = new Brain();
 }
 
 Cat::Cat(const Cat& old){
 	type = old.type;
+	_brain = old._brain;
 }
 
 Cat::~Cat(){
-
+	delete _brain;
 }
 
 void	Cat::makeSound(void) const{

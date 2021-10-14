@@ -2,10 +2,16 @@
 
 Dog::Dog(){
 	type = "Dog";
+	_brain = new Brain();
+}
+
+Dog::Dog(const Dog& old){
+	type = old.type;
+	_brain = old._brain;
 }
 
 Dog::~Dog(){
-
+	delete _brain;
 }
 
 void	Dog::makeSound(void) const{
