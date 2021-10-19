@@ -6,18 +6,18 @@ OBJS = ${SRCS:.cpp=.o}
 
 INC = Animal.hpp Brain.hpp Cat.hpp Dog.hpp
 
-CC  = clang++
+CXXC  = clang++
 
 RM  = rm -f
 
 INC_CMP = $(addprefix -I, $(INC))
 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address
+CXXFLAGS = -Wall -Wextra -Werror -fsanitize=address
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				$(CC) $(CFLAGS) $(INC_CMP) $(OBJS) -o $(NAME)
+				$(CXXC) $(CXXFLAGS) $(INC_CMP) $(OBJS) -o $(NAME)
 
 $(OBJS):		$(INC)
 
