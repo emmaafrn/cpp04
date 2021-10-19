@@ -6,6 +6,17 @@ Character::Character(std::string name){
 
 }
 
+Character::Character(const Character& old){
+	int	i = 0;
+	
+	_i = old._i;
+	_name = old._name;
+	while (i < _i){
+		_inventory[i] = old._inventory[i];
+		i++;
+	}
+}
+
 Character::~Character(){
 
 }
@@ -36,4 +47,16 @@ void	Character::use(int idx, ICharacter& target){
 	if (idx < 4 && idx >= 0 && _inventory[idx]){
 		_inventory[idx]->use(target);
 	}
+}
+
+Character	&Character::operator=(const Character &rhs){
+	int i = 0;
+
+	_i = rhs._i;
+	_name = rhs._name;
+	while (i < _i){
+		_inventory[i] = rhs._inventory[i];
+		i++;
+	}
+	return (*this);
 }

@@ -2,10 +2,16 @@
 
 Dog::Dog(){
 	type = "Dog";
+	std::cout << "A dog just arrived here" << std::endl;
+}
+
+Dog::Dog(const Dog& old){
+	type = old.type;
+	std::cout << "A dog just arrived here" << std::endl;
 }
 
 Dog::~Dog(){
-
+	std::cout << "A dog just left" << std::endl;
 }
 
 void	Dog::makeSound(void) const{

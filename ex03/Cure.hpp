@@ -9,7 +9,8 @@ class	Cure : public AMateria{
 public :
 	Cure();
 	~Cure();
-	virtual Cure* clone() const;
+	virtual Cure*	clone() const;
+	Cure			&operator=(const Cure &rhs);
 };
 
 

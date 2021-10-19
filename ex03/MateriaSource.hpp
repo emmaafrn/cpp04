@@ -10,10 +10,11 @@ private :
 	int			_i;
 public:
 	MateriaSource();
+	MateriaSource(const MateriaSource& old);
 	virtual ~MateriaSource();
-	virtual void learnMateria(AMateria*);
-	virtual AMateria* createMateria(std::string const & type);
+	virtual void		learnMateria(AMateria*);
+	virtual AMateria*	createMateria(std::string const & type);
+	MateriaSource		&operator=(const MateriaSource &rhs);
 };
-
 
 #endif

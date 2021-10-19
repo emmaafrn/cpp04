@@ -2,14 +2,16 @@
 
 Cat::Cat(){
 	type = "Cat";
+	std::cout << "A cat just arrived here" << std::endl;
 }
 
 Cat::Cat(const Cat& old){
 	type = old.type;
+	std::cout << "A cat just arrived here" << std::endl;
 }
 
 Cat::~Cat(){
-
+	std::cout << "A cat just left" << std::endl;
 }
 
 void	Cat::makeSound(void) const{

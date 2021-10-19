@@ -6,6 +6,16 @@ MateriaSource::MateriaSource(){
 	_i = 0;
 }
 
+MateriaSource::MateriaSource(const MateriaSource& old){
+	int	i = 0;
+	
+	_i = old._i;
+	while (i < _i){
+		_sources[i] = _sources[i];
+		i++;
+	}
+}
+
 MateriaSource::~MateriaSource(){
 
 }
@@ -26,4 +36,15 @@ AMateria*	MateriaSource::createMateria(std::string const & type){
 	else if (type == "ice")
 		return (new Ice());
 	return (NULL);
+}
+
+MateriaSource	&MateriaSource::operator=(const MateriaSource &rhs){
+	int i = 0;
+
+	_i = rhs._i;
+	while (i < _i){
+		_sources[i] = rhs._sources[i];
+		i++;
+	}
+	return (*this);
 }

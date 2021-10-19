@@ -14,3 +14,7 @@ Cure*	Cure::clone() const{
 	return (clone);
 }
 
+Cure	&Cure::operator=(const Cure &rhs){
+	_type = rhs._type;
+	return (*this);
+}

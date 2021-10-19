@@ -4,6 +4,10 @@ AMateria::AMateria(std::string const & type){
 	_type = type;
 }
 
+AMateria::AMateria(const AMateria& old){
+	_type = old._type;
+}
+
 AMateria::~AMateria(){
 
 }
