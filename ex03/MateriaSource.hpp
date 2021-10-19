@@ -6,8 +6,8 @@
 
 class MateriaSource : public IMateriaSource{
 private :
-	AMateria*	sources[4];
-	int			i;
+	AMateria*	_sources[4];
+	int			_i;
 public:
 	MateriaSource();
 	virtual ~MateriaSource();

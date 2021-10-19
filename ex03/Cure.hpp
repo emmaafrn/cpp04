@@ -9,6 +9,7 @@ class	Cure : public AMateria{
 public :
 	Cure();
 	~Cure();
+	virtual Cure* clone() const;
 };
 
 

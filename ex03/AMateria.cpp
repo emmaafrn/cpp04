@@ -1,7 +1,7 @@
 #include "AMateria.hpp"
 
-AMateria::AMateria(std::string const & _type){
-	
+AMateria::AMateria(std::string const & type){
+	_type = type;
 }
 
 AMateria::~AMateria(){
@@ -9,8 +9,17 @@ AMateria::~AMateria(){
 }
 
 void	AMateria::use(ICharacter& target){
-	if (type == "cure")
+	if (_type == "cure")
 		std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
-	else if (type == "ice")
+	else if (_type == "ice")
 		std::cout << "* heals " << target.getName() << " 's wounds *" << std::endl;
+}
+
+std::string const	&AMateria::getType() const{
+	return (_type);
+}
+
+AMateria	&AMateria::operator=(const AMateria &rhs){
+	_type = rhs._type;
+	return (*this);
 }

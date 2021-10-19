@@ -1,33 +1,39 @@
 #include "Character.hpp"
 
-Character::Character(){
-	i = 0;
-	inventory = new AMateria*[4];
+Character::Character(std::string name){
+	_i = 0;
+	_name = name;
+
 }
 
 Character::~Character(){
-	delete [] inventory;
+
 }
 
 const std::string &Character::getName() const{
-	return (name);
+	return (_name);
 }
 
 void	Character::equip(AMateria *m){
-	if (i <= 3 && m != NULL){
-		inventory[i] = m;
-		if (i < 3)
-			i++;
+	if (_i <= 3 && m != NULL){
+		_inventory[_i] = m;
+		if (_i < 3)
+			_i++;
 	}
 }
 
 void	Character::unequip(int idx){
-	if (i > 0){
-		inventory[i] = NULL;
-		i--;
+	if (idx <= _i && idx >= 0){
+		while (idx < _i - 1){
+			_inventory[idx] = _inventory[idx + 1];
+			idx++;
+		}
+		_inventory[idx] = NULL;
 	}
 }
 
 void	Character::use(int idx, ICharacter& target){
-	
+	if (idx < 4 && idx >= 0 && _inventory[idx]){
+		_inventory[idx]->use(target);
+	}
 }

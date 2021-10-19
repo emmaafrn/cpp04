@@ -1,23 +1,23 @@
 NAME = Interface
 
-SRCS = main.cpp 
+SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-INC = 
+INC = AMateria.hpp Character.hpp Cure.hpp Ice.hpp ICharacter.hpp IMateriaSource.hpp MateriaSource.hpp
 
-CC  = clang++
+CXXC  = clang++
 
 RM  = rm -f
 
 INC_CMP = $(addprefix -I, $(INC))
 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address
+CXXFLAGS = -Wall -Wextra -Werror
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				$(CC) $(CFLAGS) $(INC_CMP) $(OBJS) -o $(NAME)
+				$(CXXC) $(CXXFLAGS) $(INC_CMP) $(OBJS) -o $(NAME)
 
 $(OBJS):		$(INC)
 

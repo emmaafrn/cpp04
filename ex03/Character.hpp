@@ -8,15 +8,15 @@
 
 class Character : public ICharacter{
 private :
-int			i;
-std::string	name;
-AMateria	**inventory;
+int			_i;
+std::string	_name;
+AMateria	*_inventory[4];
 public:
-	Character();
+	Character(std::string name);
 	virtual ~Character();
 virtual std::string const & getName() const;
-virtual void equip(AMateria* m) = 0;
-virtual void unequip(int idx) = 0;
+virtual void equip(AMateria* m);
+virtual void unequip(int idx);
 virtual void use(int idx, ICharacter& target);
 };
 
