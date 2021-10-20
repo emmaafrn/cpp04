@@ -1,12 +1,12 @@
 NAME = AbstractClass
 
-SRCS = main.cpp Animal.cpp Brain.cpp Cat.cpp Dog.cpp
+SRCS = main.cpp AAnimal.cpp Brain.cpp Cat.cpp Dog.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-INC = Animal.hpp Brain.hpp Cat.hpp Dog.hpp
+INC = AAnimal.hpp Brain.hpp Cat.hpp Dog.hpp
 
-CXXC  = clang++
+CXX  = clang++
 
 RM  = rm -f
 
@@ -17,7 +17,7 @@ CXXFLAGS = -Wall -Wextra -Werror -fsanitize=address
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				$(CXXC) $(CXXFLAGS) $(INC_CMP) $(OBJS) -o $(NAME)
+				$(CXX) $(CXXFLAGS) $(INC_CMP) $(OBJS) -o $(NAME)
 
 $(OBJS):		$(INC)
 

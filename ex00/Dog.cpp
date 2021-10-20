@@ -6,7 +6,7 @@ Dog::Dog(){
 }
 
 Dog::Dog(const Dog& old){
-	type = old.type;
+	*this = old;
 	std::cout << "A dog just arrived here" << std::endl;
 }
 

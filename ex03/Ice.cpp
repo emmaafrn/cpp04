@@ -4,6 +4,10 @@ Ice::Ice() : AMateria("ice"){
 
 }
 
+Ice::Ice(const Ice& old) : AMateria("ice"){
+	*this = old;
+}
+
 Ice::~Ice(){
 
 }

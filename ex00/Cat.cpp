@@ -6,7 +6,7 @@ Cat::Cat(){
 }
 
 Cat::Cat(const Cat& old){
-	type = old.type;
+	*this = old;
 	std::cout << "A cat just arrived here" << std::endl;
 }
 

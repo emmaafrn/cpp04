@@ -6,18 +6,18 @@ OBJS = ${SRCS:.cpp=.o}
 
 INC = Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
 
-CC  = clang++
+CXX  = clang++
 
 RM  = rm -f
 
 INC_CMP = $(addprefix -I, $(INC))
 
-CFLAGS = -Wall -Wextra -Werror
+CXXFLAGS = -Wall -Wextra -Werror
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				$(CC) $(CFLAGS) $(INC_CMP) $(OBJS) -o $(NAME)
+				$(CXX) $(CXXFLAGS) $(INC_CMP) $(OBJS) -o $(NAME)
 
 $(OBJS):		$(INC)
 

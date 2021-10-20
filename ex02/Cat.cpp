@@ -7,8 +7,7 @@ Cat::Cat(){
 }
 
 Cat::Cat(const Cat& old){
-	type = old.type;
-	_brain = old._brain;
+	*this = old;
 	std::cout << "A cat just arrived here" << std::endl;
 }
 
@@ -23,5 +22,6 @@ void	Cat::makeSound(void) const{
 
 Cat	&Cat::operator=(const Cat &rhs){
 	type = rhs.type;
+	_brain = new Brain(*rhs._brain);
 	return (*this);
 }

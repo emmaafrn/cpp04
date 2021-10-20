@@ -6,7 +6,7 @@ OBJS = ${SRCS:.cpp=.o}
 
 INC = AMateria.hpp Character.hpp Cure.hpp Ice.hpp ICharacter.hpp IMateriaSource.hpp MateriaSource.hpp
 
-CXXC  = clang++
+CXX  = clang++
 
 RM  = rm -f
 
@@ -17,7 +17,7 @@ CXXFLAGS = -Wall -Wextra -Werror
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				$(CXXC) $(CXXFLAGS) $(INC_CMP) $(OBJS) -o $(NAME)
+				$(CXX) $(CXXFLAGS) $(INC_CMP) $(OBJS) -o $(NAME)
 
 $(OBJS):		$(INC)
 

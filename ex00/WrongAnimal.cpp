@@ -4,8 +4,8 @@ WrongAnimal::WrongAnimal(){
 
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal& Old){
-	
+WrongAnimal::WrongAnimal(const WrongAnimal& old){
+	*this = old;
 }
 
 WrongAnimal::~WrongAnimal(){

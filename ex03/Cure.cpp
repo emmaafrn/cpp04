@@ -4,6 +4,10 @@ Cure::Cure() : AMateria("cure"){
 
 }
 
+Cure::Cure(const Cure& old) : AMateria("cure"){
+	*this = old;
+}
+
 Cure::~Cure(){
 
 }

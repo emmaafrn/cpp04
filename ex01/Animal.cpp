@@ -5,7 +5,7 @@ Animal::Animal(){
 }
 
 Animal::Animal(const Animal& old){
-	type = old.type;
+	*this = old;
 	std::cout << "An animal just arrived here" << std::endl;
 }
 
